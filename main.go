@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	al "leek/algorithm"
+	"leek/base"
 	"leek/interview"
 	iv "leek/interview"
 	lc "leek/leetcode"
@@ -128,7 +129,7 @@ func main006() {
 	}
 }
 
-func main() {
+func main007() {
 	PalindromeArray := [][]int{
 		{1},
 		{1, 1},
@@ -154,4 +155,46 @@ func main() {
 		fmt.Println(result)
 		fmt.Println("------------")
 	}
+}
+
+func main008() {
+	stack := base.NewStack()
+	array := []int{0, 10, 21, 13, 44}
+	for _, v := range array {
+		stack.Put(v)
+	}
+	fmt.Println(stack.Empty())
+	fmt.Println("----------------")
+	for !stack.Empty() {
+		v, _ := stack.Get()
+		// fmt.Printf("get: %v", v)
+		fmt.Printf("%v - ", v)
+		// fmt.Println("peek: ", stack.Size())
+	}
+
+	queue := base.NewQueue()
+	for _, v := range array {
+		queue.Push(v)
+	}
+	fmt.Println(queue.Empty())
+	fmt.Println("----------------")
+	for !queue.Empty() {
+		v, _ := queue.Pop()
+		fmt.Printf("%v - ", v)
+		// fmt.Println("peek: ", queue.Size())
+	}
+}
+
+func main() {
+	array := []interface{}{4, 2, 7, 1, 3, 6, 9}
+	// 原始树
+	root := al.CreateBinTree(array)
+	info := root.LevelOrder()
+	base.PrintItems(info)
+	fmt.Println("----------------")
+	// 翻转树
+	// newroot := lc.InvertTree(root)
+	newroot := lc.InvertTreeV2(root)
+	info = newroot.LevelOrder()
+	base.PrintItems(info)
 }
