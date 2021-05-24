@@ -2,37 +2,11 @@ package algorithm
 
 import (
 	"fmt"
+	"leek/base"
 )
 
-// CreateListNode 创建一个链表
-func CreateListNode(array []int) *ListNode {
-	var header *ListNode
-	var p *ListNode
-	for _, v := range array {
-		node := NewListNode(v)
-		if header == nil {
-			header = node
-		} else {
-			p.Next = node
-		}
-		p = node
-	}
-	return header
-}
-
-// OuputListNode 输出链表
-func OuputListNode(header *ListNode) {
-	for header != nil && header.Next != nil {
-		fmt.Printf("%d -> ", header.Val)
-		header = header.Next
-	}
-	if header != nil {
-		fmt.Printf("%d\n", header.Val)
-	}
-}
-
 // RecurseReverseListNode 递归反转单链表
-func RecurseReverseListNode(header *ListNode) *ListNode {
+func RecurseReverseListNode(header *base.ListNode) *base.ListNode {
 	if header == nil || header.Next == nil {
 		return header
 	}
@@ -43,11 +17,11 @@ func RecurseReverseListNode(header *ListNode) *ListNode {
 }
 
 // ReverseListNode 非递归反转链表
-func ReverseListNode(header *ListNode) *ListNode {
+func ReverseListNode(header *base.ListNode) *base.ListNode {
 	if header == nil || header.Next == nil {
 		return header
 	}
-	var cursor *ListNode
+	var cursor *base.ListNode
 	p := header
 	for header.Next != nil {
 		cursor = header.Next
@@ -59,11 +33,11 @@ func ReverseListNode(header *ListNode) *ListNode {
 }
 
 // ReverseListNodeV2 非递归反转链表
-func ReverseListNodeV2(head *ListNode) *ListNode {
+func ReverseListNodeV2(head *base.ListNode) *base.ListNode {
 	if head == nil || head.Next == nil {
 		return head
 	}
-	dummyNode := &ListNode{
+	dummyNode := &base.ListNode{
 		Val:  -1,
 		Next: head,
 	}
@@ -81,10 +55,10 @@ func ReverseListNodeV2(head *ListNode) *ListNode {
 	return dummyNode.Next
 }
 
-var Cursor *ListNode
+var Cursor *base.ListNode
 
 // RecurseReverseListNodeN 递归反转链表的前n个节点
-func RecurseReverseListNodeN(header *ListNode, n int) *ListNode {
+func RecurseReverseListNodeN(header *base.ListNode, n int) *base.ListNode {
 	// fmt.Printf("%d, %p\n", n, Cursor)
 	if header == nil || header.Next == nil {
 		Cursor = nil
@@ -103,7 +77,7 @@ func RecurseReverseListNodeN(header *ListNode, n int) *ListNode {
 }
 
 // ReverseListNodeN 非递归反转链表前n个节点
-func ReverseListNodeN(header *ListNode, n int) *ListNode {
+func ReverseListNodeN(header *base.ListNode, n int) *base.ListNode {
 	if header == nil || header.Next == nil || n <= 1 {
 		return header
 	}
@@ -124,7 +98,7 @@ func ReverseListNodeN(header *ListNode, n int) *ListNode {
 }
 
 // RecurseReverseListNodeBetween 递归反转链表的第m个至第n个节点
-func RecurseReverseListNodeBetween(header *ListNode, m, n int) *ListNode {
+func RecurseReverseListNodeBetween(header *base.ListNode, m, n int) *base.ListNode {
 	if header == nil || m >= n {
 		return header
 	}
@@ -138,12 +112,12 @@ func RecurseReverseListNodeBetween(header *ListNode, m, n int) *ListNode {
 }
 
 // ReverseListNodeBetween 非递归反转链表中的第m至第n个节点
-func ReverseListNodeBetween(header *ListNode, m, n int) *ListNode {
+func ReverseListNodeBetween(header *base.ListNode, m, n int) *base.ListNode {
 	if header == nil || header.Next == nil || m >= n {
 		return header
 	}
 
-	dummyNode := &ListNode{
+	dummyNode := &base.ListNode{
 		Val:  -1,
 		Next: header,
 	}
@@ -168,12 +142,12 @@ func ReverseListNodeBetween(header *ListNode, m, n int) *ListNode {
 }
 
 // ReverseBetweenV2  反转指定起始节点之间的节点
-func ReverseBetweenV2(head, start, end *ListNode) *ListNode {
+func ReverseBetweenV2(head, start, end *base.ListNode) *base.ListNode {
 	if head == nil || head.Next == nil || start == nil {
 		return head
 	}
 	// 定义一个假的头结点, 方便解决 start == head 的情况
-	dummyNode := &ListNode{
+	dummyNode := &base.ListNode{
 		Val:  -1,
 		Next: head,
 	}
@@ -196,7 +170,7 @@ func ReverseBetweenV2(head, start, end *ListNode) *ListNode {
 }
 
 // RecurseReverseKGroup k 个一组反转链表, 递归算法
-func RecurseReverseKGroup(head *ListNode, k int) *ListNode {
+func RecurseReverseKGroup(head *base.ListNode, k int) *base.ListNode {
 	if head == nil || head.Next == nil || k <= 1 {
 		return head
 	}
@@ -223,7 +197,7 @@ func RecurseReverseKGroup(head *ListNode, k int) *ListNode {
 	fmt.Println("end0:", start.Val)
 	// 1 2 3
 	newheader := ReverseBetweenV2(head, start, end)
-	OuputListNode(newheader)
+	base.OuputListNode(newheader)
 	// time.Sleep(time.Second * 2)
 	// fmt.Println("newheader: ", end.Val)
 	start.Next = RecurseReverseKGroup(next, k)

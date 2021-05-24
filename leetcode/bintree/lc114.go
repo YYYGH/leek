@@ -1,8 +1,6 @@
-package leetcode
+package bintree
 
-import (
-	al "leek/algorithm"
-)
+import "leek/base"
 
 /* 114. 二叉树展开为链表
 给你二叉树的根结点 root ，请你将它展开为一个单链表：
@@ -24,7 +22,7 @@ import (
 							    6
 */
 // Flatten 展开二叉树
-func Flatten(root *al.BinTree) {
+func Flatten(root *base.BinTree) {
 	if root == nil {
 		return
 	}

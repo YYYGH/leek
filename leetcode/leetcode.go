@@ -2,7 +2,7 @@ package leetcode
 
 import (
 	"fmt"
-	"leek/base"
+	"leek/common"
 )
 
 // MinWindow 76题.最小覆盖子串
@@ -76,7 +76,7 @@ func MinPathSum(grid [][]int) int {
 			} else if j == 0 && i != 0 {
 				grid[i][j] = grid[i-1][j] + grid[i][j]
 			} else {
-				grid[i][j] = base.Min(grid[i][j-1], grid[i-1][j]) + grid[i][j]
+				grid[i][j] = common.Min(grid[i][j-1], grid[i-1][j]) + grid[i][j]
 			}
 		}
 	}

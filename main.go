@@ -4,9 +4,12 @@ import (
 	"fmt"
 	al "leek/algorithm"
 	"leek/base"
+	"leek/common"
 	"leek/interview"
 	iv "leek/interview"
 	lc "leek/leetcode"
+	bt "leek/leetcode/bintree"
+	list "leek/leetcode/list"
 )
 
 func Myslice() {
@@ -109,14 +112,14 @@ func main006() {
 		// {1, 2, 3, 4, 5, 6, 7},
 	}
 
-	ListNodearray := make([]*al.ListNode, len(multiArray))
+	ListNodearray := make([]*base.ListNode, len(multiArray))
 	for i := 0; i < len(multiArray); i++ {
-		ListNodearray[i] = al.CreateListNode(multiArray[i])
+		ListNodearray[i] = base.CreateListNode(multiArray[i])
 	}
 
 	// test reverse
 	for i := range ListNodearray {
-		al.OuputListNode(ListNodearray[i])
+		base.OuputListNode(ListNodearray[i])
 		// newHeader := al.RecurseReverseListNode(ListNodearray[i])
 		// newHeader := al.ReverseListNode(ListNodearray[i])
 		// newHeader := al.RecurseReverseListNodeN(ListNodearray[i], 1)
@@ -124,7 +127,7 @@ func main006() {
 		// newHeader := al.ReverseBetweenV2(ListNodearray[i], ListNodearray[i], ListNodearray[i].Next.Next)
 		// newHeader := al.RecurseReverseKGroup(ListNodearray[i], 2)
 		newHeader := al.ReverseListNodeV2(ListNodearray[i])
-		al.OuputListNode(newHeader)
+		base.OuputListNode(newHeader)
 		fmt.Println("-----------")
 	}
 }
@@ -140,9 +143,9 @@ func main007() {
 		{1, 2, 3, 4, 3, 3, 1},
 	}
 
-	ListNodearray := make([]*al.ListNode, len(PalindromeArray))
+	ListNodearray := make([]*base.ListNode, len(PalindromeArray))
 	for i := 0; i < len(PalindromeArray); i++ {
-		ListNodearray[i] = al.CreateListNode(PalindromeArray[i])
+		ListNodearray[i] = base.CreateListNode(PalindromeArray[i])
 	}
 
 	// test reverse
@@ -150,15 +153,15 @@ func main007() {
 		// result := lc.IsPalindromeV1(ListNodearray[i])
 		// result := lc.IsPalindromeV2(ListNodearray[i])
 		fmt.Printf("row: ")
-		al.OuputListNode(ListNodearray[i])
-		result := lc.IsPalindromeV3(ListNodearray[i])
+		base.OuputListNode(ListNodearray[i])
+		result := list.IsPalindromeV3(ListNodearray[i])
 		fmt.Println(result)
 		fmt.Println("------------")
 	}
 }
 
 func main008() {
-	stack := base.NewStack()
+	stack := common.NewStack()
 	array := []int{0, 10, 21, 13, 44}
 	for _, v := range array {
 		stack.Put(v)
@@ -172,7 +175,7 @@ func main008() {
 		// fmt.Println("peek: ", stack.Size())
 	}
 
-	queue := base.NewQueue()
+	queue := common.NewQueue()
 	for _, v := range array {
 		queue.Push(v)
 	}
@@ -185,16 +188,36 @@ func main008() {
 	}
 }
 
-func main() {
+func main009() {
 	array := []interface{}{4, 2, 7, 1, 3, 6, 9}
 	// 原始树
 	root := al.CreateBinTree(array)
-	info := root.LevelOrder()
-	base.PrintItems(info)
+	info := al.LevelOrder(root)
+	common.PrintItems(info)
 	fmt.Println("----------------")
 	// 翻转树
 	// newroot := lc.InvertTree(root)
-	newroot := lc.InvertTreeV2(root)
-	info = newroot.LevelOrder()
-	base.PrintItems(info)
+	newroot := bt.InvertTreeV2(root)
+	info = al.LevelOrder(newroot)
+	common.PrintItems(info)
+	fmt.Println("----------------")
+	array1 := []int{3, 2, 1, 6, 0, 5}
+	fmt.Println(array1)
+	r := bt.ConstructMaximumBinaryTree(array1)
+	info = al.LevelOrder(r)
+	common.PrintItems(info)
+}
+
+func main() {
+	preorder := []int{1, 2, 5, 4, 6, 7, 3, 8, 9}
+	inorder := []int{5, 2, 6, 4, 7, 1, 8, 3, 9}
+	postorder := []int{5, 6, 7, 4, 2, 8, 9, 3, 1}
+	root := bt.BuildTreeFromPreorderAndInorder(preorder, inorder)
+	info := al.LevelOrder(root)
+	common.PrintItems(info)
+	fmt.Println("----------------")
+	root = bt.BuildTreeFromInorderAndPostorder(inorder, postorder)
+	info = al.LevelOrder(root)
+	common.PrintItems(info)
+	fmt.Println("----------------")
 }

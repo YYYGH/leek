@@ -2,7 +2,7 @@ package interview
 
 import (
 	"fmt"
-	"leek/base"
+	"leek/common"
 	"sort"
 	"strconv"
 )
@@ -47,9 +47,9 @@ func MinPathWay(grids [][]int, start, end []int) [][]int {
 	}
 
 	xindex := start[0]
-	for i := 0; i <= base.Abs(start[0]-end[0]); i++ {
+	for i := 0; i <= common.Abs(start[0]-end[0]); i++ {
 		yindex := start[1]
-		for j := 0; j <= base.Abs(start[1]-end[1]); j++ {
+		for j := 0; j <= common.Abs(start[1]-end[1]); j++ {
 			// 起始位置
 			if xindex == start[0] && yindex == start[1] {
 			} else if xindex == start[0] && yindex != start[1] {
@@ -58,7 +58,7 @@ func MinPathWay(grids [][]int, start, end []int) [][]int {
 			} else if xindex != start[0] && yindex == start[1] {
 				grids[xindex][yindex] = grids[xindex-xstep][yindex] + grids[xindex][yindex]
 			} else {
-				grids[xindex][yindex] = base.Min(grids[xindex-xstep][yindex], grids[xindex][yindex-ystep]) + grids[xindex][yindex]
+				grids[xindex][yindex] = common.Min(grids[xindex-xstep][yindex], grids[xindex][yindex-ystep]) + grids[xindex][yindex]
 			}
 			yindex += ystep
 		}
@@ -84,8 +84,8 @@ func findPath(before, after [][]int, start, end []int) [][]int {
 	path := make([][]int, 0)
 	xindex := end[0]
 	yindex := end[1]
-	for i := 0; i <= base.Abs(start[0]-end[0]); i++ {
-		for j := 0; j <= base.Abs(start[1]-end[1]); j++ {
+	for i := 0; i <= common.Abs(start[0]-end[0]); i++ {
+		for j := 0; j <= common.Abs(start[1]-end[1]); j++ {
 			// 当前位置的值等于 原始数组位置的值加上x坐标移动的值
 			path = append(path, []int{xindex, yindex})
 			if ystep > 0 {

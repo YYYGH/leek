@@ -1,7 +1,8 @@
-package base
+package common
 
 import (
 	"errors"
+	"fmt"
 	"reflect"
 )
 
@@ -54,4 +55,23 @@ func ReverseSlice(data interface{}) {
 		value.Index(reverseIndex).Set(value.Index(i))
 		value.Index(i).Set(reflect.ValueOf(tmp))
 	}
+}
+
+func PrintItems(data []interface{}) {
+	for i := 0; i < len(data); i++ {
+		fmt.Printf("row: %d, value: %v\n", i+1, data[i])
+	}
+}
+
+func FindMaxVal(nums []int, low, hi int) int {
+	if len(nums) == 0 || low > hi {
+		return -1
+	}
+	maxIndex := low
+	for index := low; index <= hi; index++ {
+		if nums[maxIndex] < nums[index] {
+			maxIndex = index
+		}
+	}
+	return maxIndex
 }

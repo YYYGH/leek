@@ -1,13 +1,13 @@
-package leetcode
+package bintree
 
 import (
-	al "leek/algorithm"
 	"leek/base"
+	"leek/common"
 )
 
 // InvertTree 翻转一个二叉树, 时间复杂度: O(n), 空间复杂度: O(n)
 // leetcode 226. 翻转二叉树
-func InvertTree(root *al.BinTree) *al.BinTree {
+func InvertTree(root *base.BinTree) *base.BinTree {
 	if root == nil {
 		return nil
 	}
@@ -29,18 +29,18 @@ func InvertTree(root *al.BinTree) *al.BinTree {
 */
 
 // InvertTreeV2 翻转二叉树，版本2, 时间复杂度： O(n), 空间复杂度O(2^(h-1)), n=2^h - 1 -> h = log2^(n+1)
-func InvertTreeV2(root *al.BinTree) *al.BinTree {
+func InvertTreeV2(root *base.BinTree) *base.BinTree {
 	if root == nil {
 		return nil
 	}
-	q := base.NewQueue()
+	q := common.NewQueue()
 	q.Push(root)
 	for !q.Empty() {
 		node, ok := q.Pop()
 		if !ok {
 			break
 		}
-		pt := node.(*al.BinTree)
+		pt := node.(*base.BinTree)
 		temp := pt.Left
 		pt.Left = pt.Right
 		pt.Right = temp

@@ -2,7 +2,7 @@ package leetcode
 
 import (
 	"fmt"
-	"leek/base"
+	"leek/common"
 	"sort"
 )
 
@@ -43,7 +43,7 @@ func MergeArray(intervals [][]int) [][]int {
 	length := len(result)
 	for i := 1; i < len(data); i++ {
 		if result[length-1][1] >= data[i][0] {
-			result[length-1][1] = base.Max(result[length-1][1], data[i][1])
+			result[length-1][1] = common.Max(result[length-1][1], data[i][1])
 		} else {
 			result = append(result, data[i])
 			length++
