@@ -31,3 +31,6 @@
 
 [106. 从中序与后序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)<br>
 - [代码路径](leetcode/bintree/lc106.go)<br>
+
+[652. 寻找重复的子树](https://leetcode-cn.com/problems/find-duplicate-subtrees/)<br>
+- [代码路径](leetcode/bintree/lc652.go)<br>

@@ -22,7 +22,6 @@ import (
   9  20
     /  \
    15   7
-通过次数196,416提交次数281,722
 */
 /**
  * Definition for a binary tree node.
