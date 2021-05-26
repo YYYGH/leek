@@ -9,6 +9,7 @@ import (
 	iv "leek/interview"
 	lc "leek/leetcode"
 	bt "leek/leetcode/bintree"
+	bst "leek/leetcode/bst"
 	list "leek/leetcode/list"
 )
 
@@ -208,7 +209,7 @@ func main009() {
 	common.PrintItems(info)
 }
 
-func main() {
+func main0010() {
 	preorder := []int{1, 2, 5, 4, 6, 7, 3, 8, 9}
 	inorder := []int{5, 2, 6, 4, 7, 1, 8, 3, 9}
 	postorder := []int{5, 6, 7, 4, 2, 8, 9, 3, 1}
@@ -220,4 +221,16 @@ func main() {
 	info = al.LevelOrder(root)
 	common.PrintItems(info)
 	fmt.Println("----------------")
+}
+
+func main() {
+	// array := []interface{}{3, 1, 4, nil, 2}
+	array := []interface{}{5, 3, 6, 2, 4, nil, nil, 1}
+	// array := []interface{}{7, 5, 8, 3, 6, nil, nil, 2, 4, nil, nil, nil, nil, nil, nil, 1}
+	// array := []interface{}{10, 7, 13, 5, 8, 11, 14, 3, 6, nil, 9, nil, 12, nil, nil, 2, 4, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 1}
+	root := al.CreateBinTree(array)
+	// info := al.LevelOrder(root)
+	// common.PrintItems(info)
+	val := bst.KthSmallest(root, 3)
+	fmt.Println(val)
 }

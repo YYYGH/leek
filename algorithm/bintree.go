@@ -16,17 +16,34 @@ func CreateBinTree(list []interface{}) (root *base.BinTree) {
 	root = base.NewBinTreeNode(list[0], nil, nil)
 	queue.Push(root)
 	i := 1
+	var node *base.BinTree
 	for i < len(list) {
 		item, ok := queue.Pop()
 		// 为空跳出
 		if !ok {
 			break
 		}
-		node := item.(*base.BinTree)
+		if node, ok = item.(*base.BinTree); !ok || node == nil {
+			queue.Push(nil)
+			queue.Push(nil)
+			i += 2
+			continue
+		}
 		fmt.Println("node: ", node)
-		node.Left = base.NewBinTreeNode(list[i], nil, nil)
+		if list[i] == nil {
+			node.Left = nil
+		} else {
+			node.Left = base.NewBinTreeNode(list[i], nil, nil)
+		}
 		i++
-		node.Right = base.NewBinTreeNode(list[i], nil, nil)
+		if i >= len(list) {
+			break
+		}
+		if list[i] == nil {
+			node.Right = nil
+		} else {
+			node.Right = base.NewBinTreeNode(list[i], nil, nil)
+		}
 		i++
 		fmt.Println("node out: ", node.Left, node.Right)
 		queue.Push(node.Left)
