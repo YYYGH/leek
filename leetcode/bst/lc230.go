@@ -27,12 +27,14 @@ import (
 输出：3
 */
 
-var rank int = 0
-var dstRank int = 0
+var rank int
+var dstRank int
 var p *base.BinTree
 
 func KthSmallest(root *base.BinTree, k int) int {
 	dstRank = k
+	rank = 0
+	p = nil
 	traverseBSTInorder(root)
 	return p.Data.(int)
 }

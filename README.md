@@ -34,3 +34,19 @@
 
 [652. 寻找重复的子树](https://leetcode-cn.com/problems/find-duplicate-subtrees/)<br>
 - [代码路径](leetcode/bintree/lc652.go)<br>
+
+### 4. [手把手带你刷二叉搜索树(第一期)](https://labuladong.gitbook.io/algo/mu-lu-ye-1/mu-lu-ye-1/bst1)
+对应LeetCode题目:<br>
+[230. 二叉搜索树中第K小的元素](https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst/)<br>
+- [代码路径](leetcode/bst/lc230.go)<br>
+
+[538. 把二叉搜索树转换为累加树](https://leetcode-cn.com/problems/convert-bst-to-greater-tree/)<br>
+- [代码路径](leetcode/bst/lc538.go)<br>
+
+### 5. [手把手带你刷二叉搜索树(第二期)](https://labuladong.gitbook.io/algo/mu-lu-ye-1/mu-lu-ye-1/er-cha-sou-suo-shu-cao-zuo-ji-jin)
+对应LeetCode题目:<br>
+[700. 二叉搜索树中的搜索](https://leetcode-cn.com/problems/search-in-a-binary-search-tree/)<br>
+- [代码路径](leetcode/bst/lc700.go)<br>
+
+[98. 验证二叉搜索树](https://leetcode-cn.com/problems/validate-binary-search-tree/)<br>
+- [代码路径](leetcode/bst/lc98.go)<br>

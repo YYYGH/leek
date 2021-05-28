@@ -5,11 +5,10 @@ import (
 	al "leek/algorithm"
 	"leek/base"
 	"leek/common"
-	"leek/interview"
 	iv "leek/interview"
 	lc "leek/leetcode"
 	bt "leek/leetcode/bintree"
-	bst "leek/leetcode/bst"
+	"leek/leetcode/bst"
 	list "leek/leetcode/list"
 )
 
@@ -21,7 +20,6 @@ func Myslice() {
 }
 
 func main001() {
-	fmt.Printf("")
 	list := []int{2, 4, 7, 15, 14}
 	// list := []int{1, 3, 5, 6}
 	num := 2
@@ -99,7 +97,7 @@ func main003() {
 func main005() {
 	num2 := "8321"
 	num1 := "13229"
-	r := interview.AddNumString(num1, num2)
+	r := iv.AddNumString(num1, num2)
 	fmt.Println(r)
 }
 
@@ -224,13 +222,46 @@ func main0010() {
 }
 
 func main() {
-	// array := []interface{}{3, 1, 4, nil, 2}
-	array := []interface{}{5, 3, 6, 2, 4, nil, nil, 1}
-	// array := []interface{}{7, 5, 8, 3, 6, nil, nil, 2, 4, nil, nil, nil, nil, nil, nil, 1}
-	// array := []interface{}{10, 7, 13, 5, 8, 11, 14, 3, 6, nil, 9, nil, 12, nil, nil, 2, 4, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 1}
+	/*
+		//test KthSmallest
+		array := []interface{}{3, 1, 4, nil, 2}
+		// array := []interface{}{5, 3, 6, 2, 4, nil, nil, 1}
+		// array := []interface{}{7, 5, 8, 3, 6, nil, nil, 2, 4, nil, nil, nil, nil, nil, nil, 1}
+		// array := []interface{}{10, 7, 13, 5, 8, 11, 14, 3, 6, nil, 9, nil, 12, nil, nil, 2, 4, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 1}
+		root := al.CreateBinTree(array)
+		info := al.LevelOrder(root)
+		common.PrintItems(info)
+		val := bst.KthSmallest(root, 3)
+		fmt.Println(val)
+	*/
+
+	/*
+		//test ConvertBST
+		array := []interface{}{4, 1, 6, 0, 2, 5, 7, nil, nil, nil, 3, nil, nil, nil, 8}
+		root := al.CreateBinTree(array)
+		info := al.LevelOrder(root)
+		common.PrintItems(info)
+		fmt.Println("----------------")
+		root = bst.ConvertBST(root)
+		info = al.LevelOrder(root)
+		common.PrintItems(info)
+	*/
+	/*
+		array := []interface{}{4, 2, 7, 1, 3}
+		root := al.CreateBinTree(array)
+		info := al.LevelOrder(root)
+		common.PrintItems(info)
+		fmt.Println("----------------")
+		node := bst.SearchBST(root, 2)
+		info = al.LevelOrder(node)
+		common.PrintItems(info)
+	*/
+	// array := []interface{}{2, 1, 3}
+	// array := []interface{}{5, 1, 4, nil, nil, 3, 6}
+	// array := []interface{}{1, 1}
+	array := []interface{}{0}
 	root := al.CreateBinTree(array)
 	// info := al.LevelOrder(root)
-	// common.PrintItems(info)
-	val := bst.KthSmallest(root, 3)
-	fmt.Println(val)
+	ok := bst.IsValidBST(root)
+	fmt.Println(ok)
 }
