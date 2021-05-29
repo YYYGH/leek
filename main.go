@@ -256,12 +256,24 @@ func main() {
 		info = al.LevelOrder(node)
 		common.PrintItems(info)
 	*/
-	// array := []interface{}{2, 1, 3}
-	// array := []interface{}{5, 1, 4, nil, nil, 3, 6}
-	// array := []interface{}{1, 1}
-	array := []interface{}{0}
+	/*
+		// array := []interface{}{2, 1, 3}
+		// array := []interface{}{5, 1, 4, nil, nil, 3, 6}
+		// array := []interface{}{1, 1}
+		array := []interface{}{0}
+		root := al.CreateBinTree(array)
+		// info := al.LevelOrder(root)
+		ok := bst.IsValidBST(root)
+		fmt.Println(ok)
+	*/
+	// array := []interface{}{4, 2, 7, 1, 3}
+	array := []interface{}{40, 20, 60, 10, 30, 50, 70}
 	root := al.CreateBinTree(array)
-	// info := al.LevelOrder(root)
-	ok := bst.IsValidBST(root)
-	fmt.Println(ok)
+	info := al.LevelOrder(root)
+	common.PrintItems(info)
+	fmt.Println("----------------")
+	// root = bst.InsertIntoBSTV1(root, 5)
+	bst.InsertIntoBSTV2(root, 25)
+	info = al.LevelOrder(root)
+	common.PrintItems(info)
 }

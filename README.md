@@ -50,3 +50,6 @@
 
 [98. 验证二叉搜索树](https://leetcode-cn.com/problems/validate-binary-search-tree/)<br>
 - [代码路径](leetcode/bst/lc98.go)<br>
+
+[701. 二叉搜索树中的插入操作](https://leetcode-cn.com/problems/insert-into-a-binary-search-tree/)<br>
+- [代码路径](leetcode/bst/lc701.go)<br>
