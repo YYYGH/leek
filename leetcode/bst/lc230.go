@@ -36,6 +36,9 @@ func KthSmallest(root *base.BinTree, k int) int {
 	rank = 0
 	p = nil
 	traverseBSTInorder(root)
+	if p == nil {
+		return -1
+	}
 	return p.Data.(int)
 }
 
@@ -50,4 +53,31 @@ func traverseBSTInorder(root *base.BinTree) {
 		return
 	}
 	traverseBSTInorder(root.Right)
+}
+
+func KthSmallestV2(root *base.BinTree, k int) int {
+	dstRank = k
+	rank = 0
+	p = nil
+	if root == nil || root.Count < k {
+		// 找不到
+		return -1
+	}
+	leftCount := 0
+	if root.Left != nil {
+		if root.Left.Count >= k {
+			return KthSmallestV2(root.Left, k)
+		}
+		leftCount = root.Left.Count
+	}
+	// 找到了
+	if leftCount+1 == k {
+		return root.Data.(int)
+	}
+	// 去右边找
+	if root.Count-leftCount >= (k - leftCount - 1) {
+		return KthSmallestV2(root.Right, k-leftCount-1)
+	}
+
+	return -1
 }
