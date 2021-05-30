@@ -52,6 +52,18 @@ func CreateBinTree(list []interface{}) (root *base.BinTree) {
 	return
 }
 
+// ReCountBinTreeNode 计算二叉树中的节点个数
+func ReCountBinTreeNode(root *base.BinTree) int {
+	if root == nil {
+		return 0
+	}
+	// 后续遍历
+	leftCount := ReCountBinTreeNode(root.Left)
+	rightCount := ReCountBinTreeNode(root.Right)
+	root.Count = leftCount + rightCount + 1
+	return root.Count
+}
+
 // PreOrder 先序遍历，先根遍历，
 // 先遍历根节点，再遍历左子节点，最后遍历右子节点
 func PreOrder(p *base.BinTree) {
