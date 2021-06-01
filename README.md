@@ -57,7 +57,7 @@
 [450. 删除二叉搜索树中的节点](https://leetcode-cn.com/problems/delete-node-in-a-bst/)<br>
 - [代码路径](leetcode/bst/lc450.go)<br>
 
-### 6. [手把手带你刷二叉搜索树(第三期)]https://labuladong.gitbook.io/algo/mu-lu-ye-1/mu-lu-ye-1/bst3)
+### 6. [手把手带你刷二叉搜索树(第三期)](https://labuladong.gitbook.io/algo/mu-lu-ye-1/mu-lu-ye-1/bst3)
 对应LeetCode题目:<br>
 [95. 不同的二叉搜索树 II](https://leetcode-cn.com/problems/unique-binary-search-trees-ii/)<br>
 - [代码路径](leetcode/bst/lc95.go)<br>
