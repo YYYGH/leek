@@ -5,6 +5,10 @@ import (
 	"leek/base"
 )
 
+/*
+92. 反转链表 II, https://leetcode-cn.com/problems/reverse-linked-list-ii/
+给你单链表的头指针 head 和两个整数 left 和 right ，其中 left <= right 。请你反转从位置 left 到位置 right 的链表节点，返回 反转后的链表 。
+*/
 // RecurseReverseListNode 递归反转单链表
 func RecurseReverseListNode(header *base.ListNode) *base.ListNode {
 	if header == nil || header.Next == nil {
@@ -169,6 +173,9 @@ func ReverseBetweenV2(head, start, end *base.ListNode) *base.ListNode {
 	return dummyNode.Next
 }
 
+/*
+25. K 个一组翻转链表, https://leetcode-cn.com/problems/reverse-nodes-in-k-group/
+*/
 // RecurseReverseKGroup k 个一组反转链表, 递归算法
 func RecurseReverseKGroup(head *base.ListNode, k int) *base.ListNode {
 	if head == nil || head.Next == nil || k <= 1 {

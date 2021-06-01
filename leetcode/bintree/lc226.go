@@ -6,7 +6,7 @@ import (
 )
 
 // InvertTree 翻转一个二叉树, 时间复杂度: O(n), 空间复杂度: O(n)
-// leetcode 226. 翻转二叉树
+// leetcode 226. 翻转二叉树, https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/
 func InvertTree(root *base.BinTree) *base.BinTree {
 	if root == nil {
 		return nil

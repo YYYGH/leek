@@ -221,7 +221,7 @@ func main0010() {
 	fmt.Println("----------------")
 }
 
-func main() {
+func main0011() {
 	/*
 		//test KthSmallest
 		// array := []interface{}{3, 1, 4, nil, 2}
@@ -304,4 +304,16 @@ func main() {
 	info = al.LevelOrder(root)
 	common.PrintItems(info)
 	// */
+}
+
+func main() {
+	// n := bst.NumTrees(4)
+	// fmt.Println(n)
+	list := bst.GenerateTrees(3)
+	for _, v := range list {
+		fmt.Println("----------------")
+		info := al.LevelOrder(v)
+		// common.PrintItems(info)
+		fmt.Println(info)
+	}
 }
