@@ -143,6 +143,9 @@ func PostOrder(p *base.BinTree) {
 
 // LevelOrder 二叉树层次遍历
 func LevelOrder(p *base.BinTree) []interface{} {
+	if p == nil {
+		return nil
+	}
 	list := make([]*base.BinTree, 0)
 	list = append(list, p)
 	result := make([]interface{}, 0)

@@ -58,6 +58,9 @@ func ReverseSlice(data interface{}) {
 }
 
 func PrintItems(data []interface{}) {
+	if data == nil {
+		return
+	}
 	for i := 0; i < len(data); i++ {
 		fmt.Printf("row: %d, value: %v\n", i+1, data[i])
 	}
