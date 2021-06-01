@@ -222,23 +222,23 @@ func main0010() {
 }
 
 func main() {
-	// /*
-	//test KthSmallest
-	// array := []interface{}{3, 1, 4, nil, 2}
-	// array := []interface{}{5, 3, 6, 2, 4, nil, nil, 1}
-	// array := []interface{}{7, 5, 8, 3, 6, nil, nil, 2, 4, nil, nil, nil, nil, nil, nil, 1}
-	array := []interface{}{10, 7, 13, 5, 8, 11, 14, 3, 6, nil, 9, nil, 12, nil, nil, 2, 4, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 1}
+	/*
+		//test KthSmallest
+		// array := []interface{}{3, 1, 4, nil, 2}
+		// array := []interface{}{5, 3, 6, 2, 4, nil, nil, 1}
+		// array := []interface{}{7, 5, 8, 3, 6, nil, nil, 2, 4, nil, nil, nil, nil, nil, nil, 1}
+		array := []interface{}{10, 7, 13, 5, 8, 11, 14, 3, 6, nil, 9, nil, 12, nil, nil, 2, 4, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 1}
 
-	root := al.CreateBinTree(array)
-	info := al.LevelOrder(root)
-	al.ReCountBinTreeNode(root)
-	common.PrintItems(info)
-	k := 6
-	val := bst.KthSmallest(root, k)
-	fmt.Println(val)
-	val = bst.KthSmallestV2(root, k)
-	fmt.Println(val)
-	// */
+		root := al.CreateBinTree(array)
+		info := al.LevelOrder(root)
+		al.ReCountBinTreeNode(root)
+		common.PrintItems(info)
+		k := 6
+		val := bst.KthSmallest(root, k)
+		fmt.Println(val)
+		val = bst.KthSmallestV2(root, k)
+		fmt.Println(val)
+	*/
 
 	/*
 		//test ConvertBST
@@ -283,4 +283,25 @@ func main() {
 		info = al.LevelOrder(root)
 		common.PrintItems(info)
 	*/
+
+	// /*
+	// array := []interface{}{0}
+	// array := []interface{}{2, 1}
+	// array := []interface{}{2, 1, 3}
+	// array := []interface{}{4, 2, 7, 1, 3}
+	// array := []interface{}{5, 3, 6, 2, 4, nil, 7}
+
+	array := []interface{}{40, 25, 60, 10, 30, 50, 70, nil, 20, nil, nil, 45}
+	root := al.CreateBinTree(array)
+	info := al.LevelOrder(root)
+	common.PrintItems(info)
+	key := 10
+	// root = bst.InsertIntoBSTV1(root, 5)
+	fmt.Println("----------------:", key)
+	// root = bst.DeleteNodeFromBST(root, key)
+	root = bst.DeleteNodeFromBSTV2(root, key)
+	fmt.Println("----------------:")
+	info = al.LevelOrder(root)
+	common.PrintItems(info)
+	// */
 }
