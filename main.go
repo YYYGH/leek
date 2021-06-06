@@ -10,6 +10,7 @@ import (
 	bt "leek/leetcode/bintree"
 	"leek/leetcode/bst"
 	list "leek/leetcode/list"
+	"time"
 )
 
 func Myslice() {
@@ -306,14 +307,40 @@ func main0011() {
 	// */
 }
 
-func main() {
+func main0012() {
 	// n := bst.NumTrees(4)
 	// fmt.Println(n)
-	list := bst.GenerateTrees(3)
-	for _, v := range list {
-		fmt.Println("----------------")
-		info := al.LevelOrder(v)
-		// common.PrintItems(info)
-		fmt.Println(info)
+	/*
+		list := bst.GenerateTrees(3)
+		for _, v := range list {
+			fmt.Println("----------------")
+			info := al.LevelOrder(v)
+			// common.PrintItems(info)
+			fmt.Println(info)
+		}
+	*/
+	Coinexpected := map[int][][]int{
+		// 3: {{1, 2, 5}, {11}},
+		// 20: {{186, 419, 83, 408}, {6249}},
+		25: {{3, 7, 405, 436}, {8839}},
+		// 24: {{411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422}, {9864}},
 	}
+	t := time.Now()
+	for k, v := range Coinexpected {
+		actual := al.CoinChangeV2(v[0], v[1][0])
+		fmt.Printf("Coin(%d) = %d; expected %d\n", k, actual, v)
+	}
+	fmt.Printf("t: %v\n", time.Now().Second()-t.Second())
+}
+
+func main() {
+	lfu := al.NewLFUCache(3)
+	lfu.Put(1, 2)
+	lfu.Put(2, 3)
+	lfu.Put(3, 4)
+	lfu.Get(3)
+	lfu.Put(4, 5)
+	lfu.Get(2)
+	lfu.Put(5, 6)
+	fmt.Printf("-------")
 }

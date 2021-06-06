@@ -54,7 +54,7 @@ func InsertSort(nums []int) {
 
 // 04 归并排序 O(nlogn) 稳定
 func MergeSort(nums []int) {
-	temp := make([]int, len(nums), len(nums))
+	temp := make([]int, len(nums))
 	internalMergeSort(nums, temp, 0, len(nums)-1)
 }
 
