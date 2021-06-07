@@ -2,3 +2,4 @@
 .vscode*
 *.exe
 *pycode
+debug.test
