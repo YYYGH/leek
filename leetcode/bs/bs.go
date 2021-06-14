@@ -1,10 +1,6 @@
 package bs
 
 func BinarySearch(list []int, target int) int {
-	if len(list) == 0 {
-		return -1
-	}
-
 	left := 0
 	right := len(list) - 1
 	// [left, right]
@@ -22,10 +18,6 @@ func BinarySearch(list []int, target int) int {
 }
 
 func BinarySearchV2(list []int, target int) int {
-	if len(list) == 0 {
-		return -1
-	}
-
 	left := 0
 	right := len(list)
 	// [left, right)
@@ -44,10 +36,6 @@ func BinarySearchV2(list []int, target int) int {
 
 // 查找左边界
 func BinarySearchLeftRound(list []int, target int) int {
-	if len(list) == 0 {
-		return -1
-	}
-
 	left := 0
 	right := len(list) - 1
 	// [left, right]
@@ -68,9 +56,6 @@ func BinarySearchLeftRound(list []int, target int) int {
 }
 
 func BinarySearchLeftRoundV2(list []int, target int) int {
-	if len(list) == 0 {
-		return -1
-	}
 	left := 0
 	right := len(list)
 	// [left, right)
@@ -91,9 +76,6 @@ func BinarySearchLeftRoundV2(list []int, target int) int {
 }
 
 func BinarySearchRightRound(list []int, target int) int {
-	if len(list) == 0 {
-		return -1
-	}
 	left := 0
 	right := len(list) - 1
 	// [left, right]
@@ -114,10 +96,6 @@ func BinarySearchRightRound(list []int, target int) int {
 }
 
 func BinarySearchRightRoundV2(list []int, target int) int {
-	if len(list) == 0 {
-		return -1
-	}
-
 	left := 0
 	right := len(list)
 	// [left, right)
