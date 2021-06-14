@@ -62,13 +62,21 @@
 - [代码路径](algorithm/fib.go)<br>
 [322. 零钱兑换](https://leetcode-cn.com/problems/coin-change/)<br>
 - [代码路径](algorithm/coin.go)<br>
+
 (2) 回溯法 or DFS算法(深度优先搜索算法)<br>
 [46. 全排列](https://leetcode-cn.com/problems/permutations/)<br>
 - [代码路径](leetcode/backtrack/lc46.go)<br>
 [51. N皇后](https://leetcode-cn.com/problems/n-queens/)<br>
 - [代码路径](leetcode/backtrack/lc51.go)<br>
+
 (3) BFS算法(广度优先搜索算法)
 [111. 二叉树的最小深度](https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/)<br>
 - [代码路径](leetcode/bfs/lc111.go)<br>
 [752. 打开转盘锁](https://leetcode-cn.com/problems/open-the-lock/)<br>
 - [代码路径](leetcode/bfs/lc752.go)<br>
+
+(4) 二分搜索
+[704.二分查找（简单）](https://leetcode-cn.com/problems/binary-search/)
+- [代码路径](leetcode/bs/bs.go)<br>
+[34. 在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
+- [代码路径](leetcode/bs/bs.go)<br>

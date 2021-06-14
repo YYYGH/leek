@@ -83,3 +83,20 @@ func TestBinarySearchRightRoundV2(t *testing.T) {
 		}
 	}
 }
+
+func TestSearchItemRange(t *testing.T) {
+	data := map[int][][]int{
+		8: {{3, 4}, {5, 7, 7, 8, 8, 10}},
+		6: {{-1, -1}, {5, 7, 7, 8, 8, 10}},
+		0: {{-1, -1}, {}},
+		2: {{0, 1}, {2, 2}},
+		7: {{4, 6}, {0, 1, 2, 5, 7, 7, 7, 8, 9, 10}},
+	}
+
+	for k, v := range data {
+		actual := SearchItemRange(v[1], k)
+		if actual[0] != v[0][0] || actual[1] != v[0][1] {
+			t.Errorf("input: %v, target:%d, expected %v, got %v", v[1], k, v[0], actual)
+		}
+	}
+}
