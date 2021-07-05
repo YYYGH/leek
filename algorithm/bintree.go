@@ -86,9 +86,18 @@ func PreOrder(p *base.BinTree) {
 	}
 }
 
-// Inorder 中序遍历二叉树，中根遍历
+func RecursePreOrder(p *base.BinTree) {
+	if p == nil {
+		return
+	}
+	fmt.Printf("preorder: %d\n", p.Data.(int))
+	RecursePreOrder(p.Left)
+	RecursePreOrder(p.Right)
+}
+
+// InOrder 中序遍历二叉树，中根遍历
 // 先遍历左子节点，再遍历根节点，最后遍历右子节点
-func Inorder(p *base.BinTree) {
+func InOrder(p *base.BinTree) {
 	if p == nil {
 		return
 	}
@@ -99,11 +108,11 @@ func Inorder(p *base.BinTree) {
 		// 左孩子入栈
 		if t != nil {
 			stack = append(stack, t)
-			t = p.Left
+			t = t.Left
 		} else {
 			// 出栈
 			t = stack[len(stack)-1]
-			fmt.Printf("preorder:[%v]\n", t.Data)
+			fmt.Printf("inorder:[%v]\n", t.Data)
 			stack[len(stack)-1] = nil
 			stack = stack[:len(stack)-1]
 			// 进入右孩子
@@ -128,9 +137,10 @@ func PostOrder(p *base.BinTree) {
 			t = t.Left
 		}
 
-		t := stack[len(stack)-1]
+		t = stack[len(stack)-1]
+		// t 的右子树为空 或者 t 的右子树是prv(上次遍历的记录), 说明上次刚遍历了右子树, 现在应该遍历根节点
 		if t.Right == nil || prv == t.Right {
-			fmt.Printf("preorder:[%v]\n", t.Data)
+			fmt.Printf("postorder:[%v]\n", t.Data)
 			stack[len(stack)-1] = nil
 			stack = stack[:len(stack)-1]
 			prv = t
