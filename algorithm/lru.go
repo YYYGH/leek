@@ -29,7 +29,7 @@ func NewLRUCache(cap int) *LRUCache {
 	}
 }
 
-// 在链表头部添加节点p, 时间0(1)
+// 在链表头部添加节点n, 时间0(1)
 func (p *DoubleLinkedNode) AddFirst(n *Node) {
 	n.Next = p.Header.Next
 	n.Prev = p.Header
@@ -37,7 +37,7 @@ func (p *DoubleLinkedNode) AddFirst(n *Node) {
 	p.Header.Next = n
 }
 
-// 删除链表p节点(p 一定存在)
+// 删除链表p的n节点(n 一定存在)
 // 由于是双向链表, 给的目标Node节点, 时间O(1)
 func (p *DoubleLinkedNode) Remove(n *Node) int {
 	key := n.Val

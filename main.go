@@ -7,6 +7,7 @@ import (
 	"leek/common"
 	iv "leek/interview"
 	lc "leek/leetcode"
+	"leek/leetcode/bfs"
 	bt "leek/leetcode/bintree"
 	"leek/leetcode/bst"
 	list "leek/leetcode/list"
@@ -333,7 +334,7 @@ func main0012() {
 	fmt.Printf("t: %v\n", time.Now().Second()-t.Second())
 }
 
-func main() {
+func main0013() {
 	lfu := al.NewLFUCache(3)
 	lfu.Put(1, 2)
 	lfu.Put(2, 3)
@@ -343,4 +344,11 @@ func main() {
 	lfu.Get(2)
 	lfu.Put(5, 6)
 	fmt.Printf("-------")
+}
+
+func main() {
+	deadends := []string{"0201", "0101", "0102", "1212", "2002"}
+	target := "0202"
+	c := bfs.OpenLock(deadends, target)
+	fmt.Println("count: ", c)
 }
