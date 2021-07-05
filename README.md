@@ -80,3 +80,8 @@
 - [代码路径](leetcode/bs/bs.go)<br>
 [34. 在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
 - [代码路径](leetcode/bs/bs.go)<br>
+
+## 设计模式
+### 1. [单例模式](designmode/singleton/singleton.go)
+### 2. [工厂模式](designmode/factory/factory.go)
+### 3. [单例模式](designmode/builder/builderv1.go)
