@@ -1,3 +1,12 @@
+/*
+ * @Author: 姚杨煜
+ * @Email: yangyu.yao@shopee.com
+ * @Date: 2022-03-09 20:50:20
+ * @LastEditTime: 2022-03-09 20:52:07
+ * @LastEditors: 姚杨煜
+ * @Description:
+ * @FilePath: /leek/base/bintree.go
+ */
 package base
 
 // BinTree binary tree
@@ -15,4 +24,11 @@ func NewBinTreeNode(data interface{}, left, right *BinTree) *BinTree {
 		Left:  left,
 		Right: right,
 	}
+}
+
+type BinTreeV2 struct {
+	Val    interface{}
+	Left   *BinTree
+	Right  *BinTree
+	Parent *BinTree
 }
